@@ -42,6 +42,7 @@ if(ENABLE_UNIT_TESTS)
   set_source_files_properties(test/cycle.cc
     PROPERTIES COMPILE_FLAGS -Wno-deprecated-declarations)
   target_link_libraries(cycle FleCSI)
+  flecsi_kokkos_language(cycle)
   if(MSVC)
     target_compile_definitions(cycle PRIVATE NOMINMAX)
   endif()

@@ -60,9 +60,11 @@ function(flecsi_add_test name)
   if(NOT TARGET flecsi-unit-main)
     add_library(flecsi-unit-main OBJECT ${FLECSI_UNIT_MAIN})
     target_link_libraries(flecsi-unit-main PUBLIC FleCSI::FleCSI)
+    flecsi_kokkos_language(flecsi-unit-main)
   endif()
 
   add_executable(${name} ${unit_SOURCES})
+  flecsi_kokkos_language(${name})
   target_link_libraries(${name} PRIVATE flecsi-unit-main)
 
   add_dependencies(${FLECSI_UNIT_TESTS_TARGET} ${name})
