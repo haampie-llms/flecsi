@@ -52,6 +52,7 @@ endif()
 include(FleCSI/kokkos)
 find_dependency(Kokkos COMPONENTS separable_compilation)
 _flecsi_check_kokkos_compiler()
+_flecsi_enable_kokkos_language()
 
 if(NOT "@CALIPER_DETAIL@" STREQUAL "none")
   find_dependency(caliper)

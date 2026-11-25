@@ -354,6 +354,7 @@ if(ENABLE_LIBRARY)
   # FleCSI library.
   #----------------------------------------------------------------------------#
   add_subdirectory(flecsi)
+  flecsi_kokkos_language(FleCSI)
 
   #----------------------------------------------------------------------------#
   # Install
